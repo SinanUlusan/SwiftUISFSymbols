@@ -8,9 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var seleksiyon = 0
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        
+        TabView(selection: $seleksiyon) {
+            Image(systemName: "car.fill")
+                .font(.largeTitle)
+                .foregroundColor(Color.red)
+            .tabItem {
+                Image(systemName: "arrowshape.turn.up.left.2.circle.fill")
+                
+            }.tag(1)
+            Image(systemName: "square.and.pencil")
+                .imageScale(.small)
+                .foregroundColor(Color.green)
+            .tabItem {
+                Image(systemName: "arrowshape.zigzag.right.fill")}.tag(2)
+        }
     }
 }
 
